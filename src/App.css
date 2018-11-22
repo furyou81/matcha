@@ -1,0 +1,115 @@
+
+#root {
+  background-color: #f7f4f3;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.Menu__Container {
+  margin-bottom: 3vh;
+  background-color: #fff;;
+  border-bottom: 10px solid #e64280;
+}
+
+.Login_Register__Container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-image: linear-gradient(-20deg, #e64280 0%, #303030 100%);
+}
+
+.Login_Register__Form {
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  padding: 3vw;
+  background-color: #ffffff;
+  -webkit-box-shadow:inset 0px 0px 0px 12px #dedede66;
+    -moz-box-shadow:inset 0px 0px 0px 12px #dedede66;
+    box-shadow:inset 0px 0px 0px 12px #dedede66;
+}
+
+.Login__Title {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 3vw;
+  margin-bottom:20px;
+}
+
+.Pagination__Container {
+  margin-top: 20px !important;
+}
+
+.Listview__Card {
+  cursor: pointer;
+}
+
+.Listview__Status__Online {
+  background-color: #dfffd6 !important;
+  margin-bottom: 1px !important;
+}
+
+.Listview__Status__Offline {
+  background-color: #ffe2ed !important;
+  margin-bottom: 1px !important;
+}
+
+.Segment__Loading {
+  height: 80vh;
+}
+
+.Footer__Title {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 3vw;
+  position: relative;
+  bottom:0px;
+}
+
+.Activity__Link  {
+  color: #e64280 !important;
+}
+
+.rc-slider-track {
+  background-color: #e64280 !important;
+}
+
+.rc-slider-handle {
+  border: solid 2px #4b003d !important;
+}
+
+footer {
+    border-top: 10px solid #e64280;
+    margin-top: 2vh;
+    background-color: #4b003d;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 1vw;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width : 768px) {
+  .Login_Register__Form {
+      width:95%;
+  }
+}
+
+.notAuthorized {
+  height: 80vh;
+  padding-top: 20vh;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}

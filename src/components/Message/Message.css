@@ -1,0 +1,69 @@
+.message-from-user {
+    text-align: right;
+    right: 0;
+    background-color: #4b003d;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    width: 100%;
+    min-width: 100%;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+}
+
+.message-from-contact {
+    left: 0;
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    min-width: 100%;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+}
+
+.message-from-user_s {
+    text-align: right;
+    
+    background-color: #4b003d;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+}
+
+.message-from-contact_s {
+    
+    background-color: #F5F5F5;
+    color: #000;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+}
+
+.message-time {
+    font-size: 10px;
+}
+
+.message-header-container {
+    display: grid;
+}
+
+.message-picture {
+    grid-column: 1;
+}
+
+.message-login {
+    grid-column: 2 / span 50;
+}
+
+.message-picture-reverse {
+    grid-column: 50;
+}
+
+.message-login-reverse {
+    grid-column: 1 / span 49;
+}

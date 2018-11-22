@@ -1,0 +1,15 @@
+main {
+    margin:auto;
+    width:65%;
+}
+
+.fancy-progress-bar {
+    background-color: #e64280;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width : 768px) {
+    main {
+        width:95%;
+    }
+}
