@@ -71,12 +71,14 @@ class BigChat extends Component {
     }
 
     startPeer = async (initiator, videoChat) => {
-        try {
-        if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        await navigator.mediaDevices.getUserMedia({
+        navigator.getUserMedia = ( navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia);
+        await navigator.getUserMedia({
             video: true,
             audio: true
-        }).then(async (stream) => {
+        }, async stream => {
             p = await new SimplePeer({
                 initiator: initiator,
                 stream: stream,
@@ -91,24 +93,14 @@ class BigChat extends Component {
                 this.handleOffer(videoChat.data);
             }
         }, error => { });
-        }} catch (err) {}
     }
 
-    handleStartVideo = async (e) => {
-        await this.startPeer(false)
+    handleStartVideo = (e) => {
+        this.startPeer(false)
     }
 
-    stopStreamedVideo = (videoElem) => {
-        let stream = videoElem.srcObject;
-        if (stream) {
-            let tracks = stream.getTracks();
-            
-            tracks.forEach((track) => {
-            track.stop();
-            });
-        
-            videoElem.srcObject = null;
-        }
+    handleStopVideo = (e) => {
+        this.refs.myvideo.pause();
     }
 
     handleReceiveVideo = async (e) => {
@@ -163,10 +155,7 @@ class BigChat extends Component {
 
     handleStopVideo = () => {
         window.removeEventListener('beforeunload', this.handleLeavePage)
-        if (p)
-            p.destroy();
-        this.stopStreamedVideo(this.refs.myvideo);
-        this.stopStreamedVideo(this.refs.yourvideo);
+        p.destroy();
         this.props.onCloseVideoChat(this.props.videoChats, this.state.video_chat_contact_id)
         this.setState({initiator: true,
             accepted: false,
